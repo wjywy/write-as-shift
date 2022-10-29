@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>防抖</title>
+</head>
+<body>
+    <div class="stop" id="call">我是防抖函数</div>
+    <script type="text/javascript">
+    //debounce是一个高阶函数，返回值也是函数
+        function debounce(fn,delay) {      //定义一个debounce函数
+            let time = null;               //
+            return () => {              //返回一个函数
+          if(time !== null) {        //如果计数器存在就删除掉   
+            clearTimeout(time)       
+          }        
+          time = setTimeout(fn, delay); //不然就重新创建一个定时器
+        }
+    }
+    const call = function() {
+        alert("您已成功点击");
+    }
+document.getElementById('call').addEventListener('click',debounce(call,2000));
+    </script>
+</body>
+<style>
+    .stop {
+        height: 30px;
+        background-color: pink;
+    }
+</style>
+</html>

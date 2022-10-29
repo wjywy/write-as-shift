@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "amfe-flexible": "^2.2.1",
+    "axios": "^0.27.2",
+    "body-parser": "^1.20.0",
+    "cors": "^2.8.5",
+    "cros": "^1.0.1",
+    "express": "^4.18.1",
+    "koa": "^2.13.4",
+    "mongodb": "^4.8.1",
+    "mongoose": "^6.5.0",
+    "xmlhttprequest": "^1.8.0"
+  },
+  "name": "summer-web",
+  "version": "1.0.0",
+  "main": "two.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

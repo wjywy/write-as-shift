@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>布局实验</title>
+</head>
+
+<style>
+    .grid {
+        width: 300px;
+        height: 600px;
+        display: grid;
+        grid-template-columns: repeat(3,33.3%);
+        column-gap: 2px;
+    }
+
+    .grid div {
+        background-color: pink;
+    }
+
+    .flex {
+        display: flex;
+        flex-direction: column;
+        justify-content:center;
+        align-items: center;
+    }
+
+    .father {
+        width: 200px;
+        height: 200px;
+        background-color: green;
+        position: relative;
+    }
+
+    .son {
+        position: absolute;
+        top: 30px;
+    }
+</style>
+
+<body>
+    <div class="grid">
+        <div class="flex">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+        <div class="flex">
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+        </div>
+        <div class="flex">
+            <div>2</div>
+            <div>13</div>
+            <div>14</div>
+        </div>
+    </div>
+    
+    <details></details>    <!-- 会有三角形小菜单 -->   
+    <menu>
+        <summary>22</summary>
+        <div>33</div>
+    </menu>
+
+    <div class="father">
+        <div class="son">777777</div>
+    </div>
+</body>
+
+</html>

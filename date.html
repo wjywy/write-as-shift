@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>猜一猜哈哈哈</title>
+</head>
+
+<body onload="countdown()">
+  <div id="date">
+    <div>
+      <div class="topBox"> <strong style="font-size:xx-large" ;>欢迎</strong> 来到 <strong style="font-size:xx-large" ;>
+          有减创意时空</strong></div>
+    </div>
+    <div class="start">距离开学时间还有：</div>
+    <div class="openPicture">
+      <div onclick="open1()" >
+        <div id="day" class="day"></div>
+        <img src="./assets/bigxiong.jpeg" alt="大雄" class="cute" id="day1">
+      </div>
+      <div onclick="open2()">
+        <div id="hour" class="hour day"></div>
+        <img src="./assets/csy.jpg" alt="csy" class="cute" id="hour1">
+      </div>
+      <div onclick="open3()">
+        <div id="mini" class="mini day"></div>
+        <img src="./assets/queitxiang.jpeg" alt="静香" class="cute" id="mini1">
+      </div>
+      <div onclick="open4()">
+        <div id="seconds" class="seconds day"></div>
+        <img src="./assets/cute.jpg" alt="可爱" class="cute" id="seconds1">
+      </div>
+    </div>
+
+    <script src="../summer web/vue_test/node_modules/vue/dist/vue.js"></script>
+    <script type="text/javascript">
+      function countdown() {
+        var date = new Date();
+        var now = date.getTime();
+        var after = new Date("2022-9-3 0:0:0");
+        var goSchool = after.getTime();
+        var surplass = goSchool - now;
+        var d, h, m, s;
+        if (surplass >= 0) {
+          d = Math.floor(surplass / 1000 / 60 / 60 / 24);
+          h = Math.floor(surplass / 1000 / 60 / 60 % 24);
+          m = Math.floor(surplass / 1000 / 60 % 60);
+          s = Math.floor(surplass / 1000 % 60);
+        }
+        document.getElementById('day').innerHTML = d + '天';
+        document.getElementById('hour').innerHTML = h + '时';
+        document.getElementById('mini').innerHTML = m + '分';
+        document.getElementById('seconds').innerHTML = s + '秒';
+        setTimeout(countdown, 1000);
+      }
+
+      function open1(){
+        document.getElementById('day1').style.display = 'none';
+      }
+      function open2(){
+        document.getElementById('hour1').style.display = 'none';
+      }
+      function open3(){
+        document.getElementById('mini1').style.display = 'none';
+      }
+      function open4(){
+        document.getElementById('seconds1').style.display = 'none';
+      }
+
+
+    </script>
+</body>
+<style>
+  .topBox {
+    width: 1000px;
+    height: 200px;
+    background-color: whitesmoke;
+    position: relative;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .start {
+    margin-bottom: 15px;
+  }
+
+  .openPicture {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .day {
+    background-color: pink;
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    z-index: 2;
+  }
+
+  .cute {
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    z-index: 3;
+  }
+</style>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>节流函数</title>
+</head>
+<body>
+    <input type="button" value="我是节流" id="save">
+    <script type="text/javascript">
+        //节流函数，即函数在一段时间内无论点击多少次只执行一次,也是一个高级函数。
+        //与debounce不同的是，防抖会在函数执行之前清除，确保函数只执行一次。
+        //在节流函数中，是在settimeout内部清除的，确保一定频率内只执行一次。
+        const throttle = function(fn,interval) {
+            let time = null;
+            return () => {
+                if(!time) {
+                    time = setTimeout(() =>{
+                        fn();
+                        time = null;
+                }, interval);
+                }
+            }
+        }
+        alert(typeof(time));
+        function call(){
+            alert("我是节流函数");
+        }
+        document.getElementById('save').addEventListener('click',throttle(call,3000));
+    </script>
+</body>
+<style>
+</style>
+</html>

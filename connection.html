@@ -1,0 +1,174 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>connection</title>
+    </head>
+
+    <body>
+        <div class="delete">
+            <div class="triangle"></div>
+            <button @click="backDemo" class="back">退出登录</button>
+           <audio src=" http://m801.music.126.net/20220823133353/cf9e6a90d157899ac978666f53a45917/jdymusic/obj/wo3DlMOGwrbDjj7DisKw/17505898700/a018/fa29/294c/a100be10f4917035ebce1a8cef491249.mp3"></audio>
+        </div>
+        <div id="connection">
+            <div class="many">
+                <p class="many1">综合聊天平台,欢迎来到{{ person[0].name }}的聊天室</p>
+            </div>
+            <div class="flex">
+                <div class="messageBox" id="message"></div>
+            </div>
+            <div class="bigbox" v-if="double">
+                <label for="input">{{ white }}</label>
+                <textarea name="input" id="input" cols="230" rows="10" v-model="inputText"></textarea>
+                <button class="open" @click="sendMessage">发送</button>
+                <button class="close" @click="closeWindow">关闭</button>
+            </div>
+
+        </div>
+        <script src="../summer web/vue_test/node_modules/vue/dist/vue.js"></script>
+        <script type="text/javascript">
+            new Vue({
+            el:'#connection',
+            data:{
+                inputText:[],//与输入框进行数据绑定
+                white:'',
+                number:1,
+                double:'true',
+                person:[{
+                    name:"张三",
+                    age:13
+                },
+                {
+                    name:"李四",
+                    age:14
+                },
+                {
+                    name:"王麻子",
+                    age:15
+                }
+            ]},
+            
+            methods: {
+                closeWindow(){
+                    var number = this.number++;
+                    if(number%2==0){
+                        this.double = true;
+                    }
+                    else{
+                        this.double = false;
+                    }
+                },
+                // 聊天消息的发送
+                sendMessage(){
+                    var g = new Date();//创建日期
+                    var p = document.createElement("span")//创建p标签                    
+                    var value = document.getElementById("input").value;//获取input标签的value
+                    p.innerHTML = value + g +"<br>";//添加内容
+                    document.getElementById("message").prepend(p);//将p标签插入id为message中
+                    document.getElementById("input").value='';//清空输入框
+                    var p2 = document.createElement("img");//创建一个img标签
+                    p2.src = './assets/bigxiong.jpeg'; //图片地址
+                    p2.width = 50;
+                    p2.height = 50;
+                    document.getElementById("message").prepend(p2);
+                    p2.className = "name";
+                },
+                backDemo(){
+                    confirm('确认退出吗');
+                    window.location.href = 'enter.html';
+                }
+            },
+        });
+        </script>
+    </body>
+    <style type="text/css">
+    body {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+    
+    .many {
+        height: 40px;
+        background-color: blue;
+        margin-left: 10px;
+        margin-right: 20px;
+    }
+    
+    .many1 {
+        color: white;
+        padding-left: 10px;
+        padding-top: 10px;
+    }
+    
+    .delete {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+    
+    .back {
+        background-color: white;
+        border: 0px;
+    }
+    
+    .triangle {
+        /* width: 0;
+        height: 0;
+        line-height: 0;
+        font-size: 0;
+        border: 5px solid transparent;
+        border-left-color: pink; */
+        width: 0;
+  height: 0;
+  line-height: 0;
+    font-size: 0;
+  border: 5px solid transparent;
+  border-left-color: pink;
+  border-right-color: pink;
+  margin-left: 10px;
+    }
+    
+    .name {
+        background-color: pink;
+    }
+    
+    .flex {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        background-color: pink;
+    }
+    
+    .bigbox {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+    
+    .close {
+        width: 150px;
+        float: right;
+        text-align: center;
+        background-color: whitesmoke;
+        margin-right: 10px;
+        border-radius: 75px;
+    }
+    
+    .open {
+        float: right;
+        width: 150px;
+        margin-right: 8px;
+        text-align: center;
+        background-color: whitesmoke;
+        border-radius: 75px;
+    }
+    </style>
+
+    </html>

@@ -1,0 +1,114 @@
+.topBox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 1.39508929rem;
+}
+.topBox .imgAndFind {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.7);
+  width: 5.35714286rem;
+  height: 1.953125rem;
+  border-radius: 1.25rem;
+  border: 0.0625rem solid #999999;
+}
+.topBox .imgAndFind img {
+  width: 0.9375rem;
+  height: 0.9375rem;
+}
+.topBox .imgAndFind .image1 {
+  margin-left: 0.9375rem;
+}
+.topBox .imgAndFind .image2 {
+  margin-right: 0.9375rem;
+}
+.topBox .imgAndFind .divide {
+  height: 0.9375rem;
+  width: 0.0625rem;
+  background-color: #999999;
+}
+.topBox .souSuo {
+  margin-left: 4.375rem;
+}
+.findAndInput {
+  margin-left: 0.83705357rem;
+  width: 21.20535714rem;
+  height: 2.23214286rem;
+  margin-bottom: 0.89285714rem;
+  border-radius: 1.25rem;
+  background-color: #f7f7f7;
+  color: #999999;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.findAndInput .find {
+  width: 0.9375rem;
+  height: 0.9375rem;
+  margin-left: 0.3125rem;
+}
+.findAndInput .research {
+  background-color: #f7f7f7;
+  color: #999999;
+  border: 0.0625rem solid #f7f7f7;
+}
+.findAndInput .research:focus {
+  outline: none;
+}
+.totalBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.totalBox .normalBox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 1.09808377rem;
+}
+.totalBox .normalBox .sortNumber {
+  margin-left: 0.83705357rem;
+  margin-right: 1.39508929rem;
+}
+.totalBox .normalBox .contentAndName {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 13.61607143rem;
+}
+.totalBox .normalBox .contentAndName .content {
+  font-size: 0.625rem;
+  color: #b9b9b9;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.totalBox .normalBox .contentAndName .name {
+  font-size: 0.9375rem;
+  color: #333333;
+}
+.totalBox .normalBox .hotNumberDiv {
+  height: 0.625rem;
+  width: 3.75rem;
+}
+.totalBox .normalBox .hotNumberDiv .hotNumber {
+  font-size: 0.625rem;
+  color: #b9b9b9;
+  position: absolute;
+  right: 0.89285714rem;
+}
+.oldColor {
+  color: #b9b9b9;
+}
+.changeColor {
+  color: #ff3a3a;
+}
+.gone {
+  display: none;
+}
+#clickSearch {
+  color: #507daf;
+}

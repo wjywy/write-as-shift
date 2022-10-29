@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>备忘录</title>
+</head>
+
+<body>
+   
+    <div id="total">
+        <input type="text" id="input" placeholder="请输入">
+        <button id="div">增加</button>
+        <!-- <button id="div2">删除</button>
+    <button id="div3">改动</button> -->
+        <button id="div4">查询</button>
+        <div id="data" class="data"></div>
+    </div>
+    <!-- 引入jQuery语法 -->
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        // $("#div2").on("click", () => {
+        //     $.ajax({
+        //         type: "get",
+        //         url: "http://127.0.0.1:7676/delete",
+        //         data: {
+        //             cont: $("#input").val(),
+        //         },
+        //         dataType: "json",
+        //         success: function (data) {
+        //             console.log(data)
+        //         },
+        //         error: function (XMLHttpRequest, textStatus, errorThrown) {
+        //             console.log("请求对象XMLHttpRequest: " + XMLHttpRequest);
+        //             console.log("错误类型textStatus: " + textStatus);
+        //             console.log("异常对象errorThrown: " + errorThrown);
+        //         }
+        //     });
+        // });
+
+        // $("#div3").on("click", () => {
+        //     $.ajax({
+        //         type: "get",
+        //         url: "http://127.0.0.1:7676/update",
+        //         data: {
+        //             cont: $("#input").val(),    	//val()设置或返回被选元素的属性值（针对表单元素）
+        //         },
+        //         dataType: "json",
+        //         success: function (data) {
+        //             console.log(data)
+        //         },
+        //         error: function () {
+        //        console.log(cont);
+        //         }
+        //     });
+        //     var div = document.createElement('div');
+        //     var bigDiv = document.getElementById('data')
+        //     bigDiv.appendChild(div);
+        //     div.innerHTML = $("#input").val();
+        // });
+        $("#div").on("click", () => {
+            $.ajax({
+                type: "get",
+                url: "http://127.0.0.1:7676/index",
+                data: {
+                    cont: $("#input").val(),
+                },
+                dataType: "json",
+                success: function (data) {
+                    console.log(data)
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    console.log("请求对象XMLHttpRequest: " + XMLHttpRequest);
+                    console.log("错误类型textStatus: " + textStatus);
+                    console.log("异常对象errorThrown: " + errorThrown);
+                }
+            });
+            var middleDiv = document.createElement('div')    //一个中级盒子，放删除键，更新键
+            middleDiv.className = 'middleDiv';               //添加类名
+            var div = document.createElement('div');            //添加一个小盒子，放增添的事件
+            div.className = 'divId';
+            var bigDiv = document.getElementById('data')        //获取大盒子
+            bigDiv.appendChild(middleDiv);                     //中盒子装进大盒子
+            middleDiv.appendChild(div);                            //小盒子装进中盒子
+            var buttonDelete = document.createElement('input');      //添加按钮，删除
+            buttonDelete.type = 'button';
+            buttonDelete.value = "删除";
+            middleDiv.appendChild(buttonDelete);                    //删除装进中盒
+            var buttonUpdate = document.createElement('input');   //更新键
+            buttonUpdate.type = 'button';
+            buttonUpdate.value = "更新";
+            middleDiv.appendChild(buttonUpdate);                   //更新装进中盒
+            let inputValue1 = $("#input").val();                 //获取输入框的值
+            div.innerHTML = inputValue1;                         //显示到小盒
+            buttonDelete.onclick = function () {                 //添加删除事件
+                $.ajax({
+                    type: "get",
+                    url: "http://127.0.0.1:7676/delete",
+                    data: {
+                        cont: $("#input").val(),
+                    },
+                    dataType: "json",
+                    success: function (data) {
+                        console.log(data)
+                    },
+                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                        console.log("请求对象XMLHttpRequest: " + XMLHttpRequest);
+                        console.log("错误类型textStatus: " + textStatus);
+                        console.log("异常对象errorThrown: " + errorThrown);
+                    }
+                });
+                buttonDelete.style.display = 'none';
+                buttonUpdate.style.display = 'none';
+                div.style.display = 'none';
+                middleDiv.style.display = 'none';
+            }
+            buttonUpdate.onclick = function () {
+                $.ajax({
+                    type: "get",
+                    url: "http://127.0.0.1:7676/update",
+                    data: {
+                        cont: $("#input").val(),    	//val()设置或返回被选元素的属性值（针对表单元素）
+                    },
+                    dataType: "json",
+                    success: function (data) {
+                        console.log(data)
+                    },
+                    error: function () {
+                        console.log(cont);
+                    }
+                });
+                let inputValue = $("#input").val();
+                div.innerHTML = inputValue;
+            }
+        });
+
+
+        $("#div4").on("click", () => {
+            $.ajax({
+                type: "get",
+                url: "http://127.0.0.1:7676/inquire",
+                data: {
+                    cont: $("#input").val(),
+                },
+                dataType: "json",
+                success: function (data) {
+                    console.log(data);
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    console.log("请求对象XMLHttpRequest: " + XMLHttpRequest);
+                    console.log("错误类型textStatus: " + textStatus);
+                    console.log("异常对象errorThrown: " + errorThrown);
+                }
+
+            });
+            let inputValue2 = $("#input").val();
+            // let number = 0;
+            // $("#divId").each(function(){
+            //     let str = $(this).text();
+            //     if(str==inputValue2){
+            //         number++;
+            //     }
+            // })
+            let str = document.getElementsByClassName('divId');
+            let number = 0;
+            for(let i=0;i<str.length;i++){
+                if(str[i].innerText==inputValue2){
+                    number++;
+                }else continue;
+            }
+            var middleDiv = document.createElement('div')    //一个中级盒子，放删除键，更新键
+            middleDiv.className = 'middleDiv';               //添加类名
+            var div = document.createElement('div');            //添加一个小盒子
+            var bigDiv = document.getElementById('data')        //获取大盒子
+            bigDiv.appendChild(middleDiv);                     //中盒子装进大盒子
+            middleDiv.appendChild(div);                            //小盒子装进中盒子
+            let addcount = document.createElement('div')
+            middleDiv.appendChild(addcount);
+            var buttonRemove = document.createElement('input');      //添加按钮，取消查询
+            buttonRemove.type = 'button';
+            buttonRemove.value = "取消查询";
+            middleDiv.appendChild(buttonRemove);                    //取消查询装进中盒
+            div.innerHTML = inputValue2;
+            addcount.innerHTML = number + '条';
+             $("#data").addClass('flex');
+            buttonRemove.onclick = function () {
+                middleDiv.style.display = 'none';
+                div.style.display = 'none';
+                addcount.style.display = 'none';
+                buttonRemove.style.display = 'none'
+            }
+
+        })
+    </script>
+</body>
+
+<style>
+    body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+
+    .data {
+        width: 300px;
+        background-color: pink;
+    }
+
+    .flex {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .middleDiv {
+        width: 300px;
+        height: 50px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        background-color: pink;
+    }
+</style>
+
+</html>

@@ -1,0 +1,407 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    // backdrop-filter: blur(62.5rem);
+    // width: 100%;
+    // height: 100%;
+}
+
+.blurBackground {
+    backdrop-filter: blur(18.75rem); //毛玻璃
+    // background-color: rgb(104, 111, 117);
+    width: 100%;
+    height: 100%;
+}
+
+@imgAndFindSizeW: 23.4375rem * (96/420); //图标框的宽
+@imgAndFindSizeH: (2.1875rem / (420/375)); //图标框的高
+@margin7: (5rem / (420/375)); //图标框与上方的间距
+
+.topBoxFather {
+    height: @margin7;
+    // backdrop-filter: blur(62.5rem);//加了这个不会显示固定定位
+}
+
+.topBox {
+    //最顶排
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: @margin7 ;
+    width: 100%;
+    // margin-left: @margin1;
+    position: fixed;
+    z-index: 3;
+    background-color: rgb(69,81,93); //背景色透明
+
+    .imgAndFind {
+        //图标框
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        background-color: rgba(255, 255, 255, 0.3);
+        width: @imgAndFindSizeW;
+        height: @imgAndFindSizeH;
+        border-radius: 1.25rem;
+        border: .0625rem solid rgb(153, 153, 153);
+
+        img {
+            //图标图片
+            width: .9375rem;
+            height: .9375rem;
+        }
+
+        .image1 {
+            margin-left: .9375rem;
+        }
+
+        .image2 {
+            margin-right: .9375rem;
+        }
+
+        .divide {
+            height: .9375rem;
+            width: .0625rem;
+            background-color: rgb(153, 153, 153);
+        }
+    }
+
+    .souSuo {
+        margin-left: 4.375rem;
+        color: white;
+    }
+}
+
+
+@sizew: 23.4375rem;
+@sizeh: (28.75rem / (420/375));
+
+.pictureBox {
+    height: 28rem;
+    width: @sizew;
+}
+
+.musicPicture {
+    //音乐的图片
+    width: @sizew;
+    height: @sizeh;
+    z-index: 1;
+    position: absolute;
+}
+
+@left: 5.875rem; //向右偏移量
+@top: 9.75rem; //向下偏移量
+
+.pictureArea {
+    //每首歌专属的图片
+    width: 11.625rem;
+    height: 11.625rem;
+    border-radius: 5.8125rem;
+    position: absolute;
+    top: @top;
+    left: @left;
+    z-index: 2;
+}
+
+.pictureAreaRotate {
+    //旋转动画
+    animation: move 7s linear infinite;
+}
+
+@keyframes move {
+
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+@yuan1: 23.4375rem * (55/420); //圆   
+@topyuan: @top + 4.0625rem;
+@leftyuan: @left + 4.0625rem;
+
+.yuan {
+    width: @yuan1;
+    height: @yuan1;
+    border-radius: 23.4375rem * (55/420) * (1/2);
+    background-color: transparent;
+    border: .0625rem solid white;
+    position: absolute;
+    top: @topyuan;
+    left: @leftyuan;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .triangle {
+        //三角，点击播放
+        width: 0;
+        height: 0;
+        line-height: 0;
+        font-size: 0;
+        border: .625rem solid transparent;
+        border-left-color: rgb(255, 255, 255);
+        margin-left: .625rem;
+    }
+}
+
+
+
+.startSing {
+    //点击暂停
+    width: 0;
+    height: 0;
+    line-height: 0;
+    font-size: 0;
+    border: .625rem solid transparent;
+    border-left-color: white;
+    border-right-color: white;
+}
+
+.songWordArea {
+    //歌词区
+    height: 7.1875rem;
+    text-align: center;
+    overflow: scroll;
+}
+
+.songWord {
+    //歌词的显示
+    color: white;
+    white-space: pre-line; //识别换行
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1rem;
+}
+
+@shareTofriendsW:23.4375rem * (200/420);
+@shareTofriendsH:41.6875rem * (35/(667*(374/420)));
+
+
+    .shareTofriends {
+        width: @shareTofriendsW;
+        height: @shareTofriendsH;
+        border-radius: 1.4375rem;
+        border: .0625rem solid rgb(153, 153, 153);
+        margin-left: 6.25rem;
+        margin-top: 1.875rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-size: .9375rem;
+    }
+
+
+
+@buttonToListenW:23.4375rem * (90/420);//一键收听的宽
+@buttonTolistenH:41.6875rem * (30/(667*(420/375)));//一键收听的高
+.listen-buttonToListen {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    .listen {
+        // 喜欢这首歌的人也喜欢听
+        color: rgb(255, 255, 255);
+        font-size: .9375rem;
+        margin-bottom: @simiNormalBoxMargin;
+        margin-top: @simiNormalBoxMargin;
+        margin-left: @simiImageLeft;
+    }
+    .buttonToListen {
+        width: @buttonToListenW;
+        height: @buttonTolistenH;
+        border: .0625rem solid rgb(153, 153, 153);
+        color: white;
+        font-size: .625rem;
+        margin-right: @simiImageLeft;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius:.9375rem;
+    }
+}
+
+
+
+//相似的歌曲
+@simiImageW: 23.4375rem * (45/420); //照片的宽
+@simiImageH: (2.8125rem / (420/375)); //照片的高
+@simiNormalBoxMargin: (1.25rem / (420/375)); //排与排之间的间距
+@simiImageLeft: 23.4375rem * (15/420); //照片与左边的间距
+@simiSongnameMargin: (.625rem / (420/375)); //名字与歌手之间的间距
+@yuan2: 23.4375rem * (25/420); //圆
+@showWord: 23.4375rem * (200/420); //可显示文本
+
+.similar {
+    display: flex;
+    flex-direction: column;
+
+    .simiNormalBox {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: @simiNormalBoxMargin ;
+
+        .simiImage {
+            width: @simiImageW;
+            height: @simiImageH;
+            margin-left: @simiImageLeft;
+            margin-right: @simiImageLeft;
+        }
+
+        .simiNameAndAuthorBackground {
+            display: flex;
+            flex-direction: column;
+            width: @showWord;
+
+            .simiName {
+                color: rgb(255, 255, 255);
+                font-size: .75rem;
+                margin-bottom: @simiSongnameMargin;
+            }
+
+            .simiAuthorBackground {
+                color: rgb(153, 153, 153);
+                font-size: .5rem;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+        }
+
+        .yuanRight {
+            width: @yuan2;
+            height: @yuan2;
+            border-radius: 23.4375rem * (25/420) * (1/2);
+            background-color: transparent;
+            border: .0625rem solid rgb(153, 153, 153);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            right: .625rem;
+
+
+            .triangleRight {
+                //三角
+                width: 0;
+                height: 0;
+                line-height: 0;
+                font-size: 0;
+                border: .4375rem solid transparent;
+                border-left-color: rgb(153, 153, 153);
+                margin-left: .625rem;
+            }
+        }
+
+
+    }
+}
+
+
+
+
+//精彩评论
+.perfectComment {
+    color: rgb(255, 255, 255);
+    margin-top: @simiNormalBoxMargin;
+    margin-left: @margin1;
+    font-size: .9375rem;
+}
+
+
+@size: 23.4375rem * (35/420);
+@margin1: 23.4375rem * (11/420); //头像与左右侧的距离
+@margin2: 23.4375rem * (23/420); //每一列与上面的距离
+@margin3: 23.4375rem * (20/420); //每一列与下面的距离
+@margin4: 23.4375rem * (10/420);
+@margin12: (.9375rem / (420/375)); //点赞图标的高
+
+.commentArea {
+    display: flex;
+    flex-direction: column;
+
+    .oneComment {
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+
+        // justify-content: center;
+        .picture {
+            width: @size;
+            height: @size;
+            border-radius: @size/2;
+            margin-left: @margin1;
+            margin-right: @margin1;
+            margin-top: @margin2;
+        }
+
+        .peopleTimeContent {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: flex-start;
+
+            .commentPeople {
+                font-size: .625rem;
+                color: rgb(152, 156, 158);
+                margin-top: @margin2;
+            }
+
+            .time {
+                font-size: .5rem;
+                color: rgb(104, 111, 117);
+                margin-bottom: @margin4;
+            }
+
+            .commentContent {
+                font-size: .75rem;
+                color: rgb(255, 255, 255);
+                margin-bottom: @margin3;
+            }
+        }
+
+        .callCount {
+            font-size: .625rem;
+            color: rgb(104, 111, 117);
+            position: absolute;
+            right: 2.5rem;
+            margin-top: @margin2;
+        }
+
+        .call {
+            width: @margin3 ;
+            height: @margin12;
+            position: absolute;
+            margin-top: @margin2;
+            right: 1rem;
+        }
+    }
+    .divide {
+        height: .0625rem;
+        width: 19.375rem;
+        background-color: rgb(152, 156, 158);
+        margin-left: 3.125rem;
+    }
+}
+
+
+
+.gone {
+    display: none;
+}

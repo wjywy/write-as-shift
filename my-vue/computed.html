@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>to do list</title>
+</head>
+
+<body>
+    <div class="one">
+        <div class="total">
+            <div style="width: 400px;height: 150px;background-color: pink;" class="word1" id="word1">
+                <div style="font-weight: 800;font-size:large;color: white;">My To Do List</div>
+                <div class="box">
+                    <input type="text" placeholder="记录一下" class="boxLeft" id="text">
+                    <div class="boxRight" onclick="addThing()">Add</div>
+                </div>
+            </div>
+        </div>
+        <!-- 动态创建盒子 -->
+
+        <div class="leftTotal" id="total"></div>
+
+    </div>
+    <script type="text/javascript">
+        // 获取input框的值并在页面渲染
+        function addThing() {
+            var text = document.getElementById('text');//获取输入框
+            var addWord = text.value;//获取输入框的值
+            var createBox = document.createElement('div');//动态创建大盒子
+            var addDiv = document.getElementById('total');//获取总盒子
+            addDiv.appendChild(createBox);//
+            createBox.className='create3';//因为它要包含三个div
+            var gou = document.createElement('div');//创建勾勾元素
+            gou.innerHTML = '√';
+            createBox.appendChild(gou);
+            gou.style.display = "none";
+            gou.className = 'right3';
+            var div = document.createElement('div');//创建一个盒子
+            div.innerHTML = addWord;//为盒子添加值
+            createBox.appendChild(div);//将盒子作为大盒子的子元素
+            var div2 = document.createElement('div');
+            div2.innerHTML = 'x';
+            createBox.appendChild(div2);
+            div2.className = "div2";
+            div.className = "newDiv ";//为盒子添加类名
+            div.onclick = function () {
+                div.classList.add('lineDelete');//添加类名
+                gou.style.removeProperty("display");
+                div.style.width = "350px";
+            };//为盒子添加一个触发事件
+            div2.onclick = function () {
+                div.classList.add('gone');
+                gou.classList.add('gone');
+                div2.classList.add('gone');
+            };//为小盒子添加一个触发事件
+        }
+
+    </script>
+</body>
+<style>
+    .newDiv {
+        background-color: whitesmoke;
+        height: 30px;
+        width: 360px;
+        padding-left: 20px;
+    }
+
+    .div2 {
+        padding-right: 10px;
+        background-color: whitesmoke;
+        width: 10px;
+        height: 30px;
+    }
+
+    .lineDelete {
+        text-decoration: line-through;
+    }
+
+    .gone {
+        display: none;
+    }
+
+    .right3 {
+        background-color: whitesmoke;
+        height: 30px;
+    }
+
+    body {
+        padding: 0;
+        margin: 0;
+    }
+
+    .one {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .create3 {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .leftTotal {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .total {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    .word1 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-top-left-radius: 25px;
+        border-top-right-radius: 25px;
+    }
+
+    .box {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .boxLeft {
+        width: 250px;
+        height: 30px;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+    }
+
+    .boxRight {
+        width: 100px;
+        height: 36px;
+        background-color: red;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
+
+</html>

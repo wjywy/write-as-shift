@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>防抖</title>
+</head>
+<body>
+    <div class="stop" id="call">防抖</div>
+    <script type="text/javascript">
+        function debounce(fn,delay) {    
+            let time = null;               
+            return () => {              
+          if(time !== null) {           
+            clearTimeout(time)      
+          }        
+          time = setTimeout(fn, delay); 
+        }
+    }
+    const call = function() {
+        alert("您已成功点击");
+    }
+document.getElementById('call').addEventListener('click',debounce(call,2000));
+    </script>
+</body>
+</html>

@@ -1,0 +1,159 @@
+@margin1: 23.4375rem * (10/420); //图片与左边
+@searchHeight: 23.4375rem * (40/420); //搜索框高
+@searchWidth: 23.4375rem * (380/420); //搜索框宽
+@searchMargin: 23.4375rem * (16/420); //搜索框与图片间距
+@margin2: 23.4375rem * (15/420); //搜索框与左边间距
+@findAndInputW: 23.4375rem * (380/420); //搜索框宽
+@imgAndFindSizeW: 23.4375rem * (96/420); //图标框的宽
+@imgAndFindSizeH: (2.1875rem / (420/375)); //图标框的高
+@margin7: (1.5625rem / (420/375)); //图标框与字体的间距
+
+.topBox {
+    //最顶排
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: @margin7;
+
+    .imgAndFind {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        background-color: rgba(255, 255, 255, 0.7);
+        width: @imgAndFindSizeW;
+        height: @imgAndFindSizeH;
+        border-radius: 1.25rem;
+        border: .0625rem solid rgb(153, 153, 153);
+
+        img {
+            width: .9375rem;
+            height: .9375rem;
+        }
+
+        .image1 {
+            margin-left: .9375rem;
+        }
+
+        .image2 {
+            margin-right: .9375rem;
+        }
+
+        .divide {
+            height: .9375rem;
+            width: .0625rem;
+            background-color: rgb(153, 153, 153);
+        }
+    }
+
+    .souSuo {
+        margin-left: 4.375rem;
+    }
+}
+
+
+
+//搜索框
+.findAndInput {
+    margin-left: @margin2;
+    width: @findAndInputW;
+    height: @searchHeight;
+    margin-bottom: @searchMargin;
+    border-radius: 1.25rem;
+    background-color: rgb(247, 247, 247);
+    color: rgb(153, 153, 153);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .find {
+        width: .9375rem;
+        height: .9375rem;
+        margin-left: .3125rem;
+    }
+
+    .research {
+        // margin-left: .3125rem;
+        // width: @searchWidth;
+        background-color: rgb(247, 247, 247);
+        color: rgb(153, 153, 153);
+        border: .0625rem solid rgb(247, 247, 247);
+
+        &:focus {
+            outline: none;
+        }
+    }
+}
+
+@marginbottom: 23.4375rem * (35/(667*(420/375)));
+@marginSort: 23.4375rem * (25/420);
+@marginSort1: 23.4375rem * (15/420);
+@contentW: 23.4375rem * (244/420);
+
+.totalBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .normalBox {
+        display: flex;
+        flex-direction: row;
+        // justify-content: left;
+        align-items: center;
+        margin-bottom: @marginbottom;
+
+        .sortNumber {
+            margin-left: @marginSort1;
+            margin-right: @marginSort;
+            // color: rgb(185, 185, 185);
+        }
+
+        .contentAndName {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: @contentW;
+
+            .content {
+                font-size: .625rem;
+                color: rgb(185, 185, 185);
+                overflow: hidden; //超出文本添加省略号，注意首先要在父元素上添加宽度
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+
+            .name {
+                font-size: .9375rem;
+                color: rgb(51, 51, 51);
+            }
+        }
+
+        .hotNumberDiv {
+            height: .625rem;
+            width: 3.75rem;
+
+            .hotNumber {
+                font-size: .625rem;
+                color: rgb(185, 185, 185);
+                position: absolute;
+                right: @searchMargin;
+            }
+        }
+    }
+}
+
+.oldColor {
+    color: rgb(185, 185, 185);
+}
+
+.changeColor {
+    color: rgb(255, 58, 58);
+}
+
+.gone {
+    display: none;
+}
+
+#clickSearch {
+    color: rgb(80,125,175);
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>歌单</title>
+</head>
+
+<link rel="stylesheet" href="./songList.css">
+
+<body>
+
+    <!-- 标题呜呜 -->
+    <div class="titleBox">
+        <div class="helpSongList" id="helpSongList">
+            <div class="imgAndFind">
+                <img src="../assets/返回.png" alt="返回上一页" class="image1" id="image1">
+                <div class="divide"></div>
+                <img src="../assets/返回主菜单.png" alt="返回首页" class="image2" id="image2">
+            </div>
+            <div class="songList">歌单</div>
+        </div>
+    </div>
+
+
+    <!-- 歌单上方介绍 -->
+    <div id="topBox" class="topBox"></div>
+
+    <!-- 点击播放 -->
+    <div class="yuanAndStart" id="yuanAndStart">
+        <div class="yuan">
+            <div class="triangle"></div>
+        </div>
+        <span class="start">播放全部</span><span class="list">(共100首)</span>
+    </div>
+
+    <!-- 歌单列表 -->
+    <div id="totalBox"></div>
+
+
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="./songList.js"></script>
+</body>
+
+</html>

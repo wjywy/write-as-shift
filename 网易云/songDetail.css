@@ -1,0 +1,291 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.blurBackground {
+  backdrop-filter: blur(18.75rem);
+  width: 100%;
+  height: 100%;
+}
+.topBoxFather {
+  height: 4.46428571rem;
+}
+.topBox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 4.46428571rem;
+  width: 100%;
+  position: fixed;
+  z-index: 3;
+  background-color: #45515d;
+}
+.topBox .imgAndFind {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.3);
+  width: 5.35714286rem;
+  height: 1.953125rem;
+  border-radius: 1.25rem;
+  border: 0.0625rem solid #999999;
+}
+.topBox .imgAndFind img {
+  width: 0.9375rem;
+  height: 0.9375rem;
+}
+.topBox .imgAndFind .image1 {
+  margin-left: 0.9375rem;
+}
+.topBox .imgAndFind .image2 {
+  margin-right: 0.9375rem;
+}
+.topBox .imgAndFind .divide {
+  height: 0.9375rem;
+  width: 0.0625rem;
+  background-color: #999999;
+}
+.topBox .souSuo {
+  margin-left: 4.375rem;
+  color: white;
+}
+.pictureBox {
+  height: 28rem;
+  width: 23.4375rem;
+}
+.musicPicture {
+  width: 23.4375rem;
+  height: 25.66964286rem;
+  z-index: 1;
+  position: absolute;
+}
+.pictureArea {
+  width: 11.625rem;
+  height: 11.625rem;
+  border-radius: 5.8125rem;
+  position: absolute;
+  top: 9.75rem;
+  left: 5.875rem;
+  z-index: 2;
+}
+.pictureAreaRotate {
+  animation: move 7s linear infinite;
+}
+@keyframes move {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.yuan {
+  width: 3.06919643rem;
+  height: 3.06919643rem;
+  border-radius: 1.53459821rem;
+  background-color: transparent;
+  border: 0.0625rem solid white;
+  position: absolute;
+  top: 13.8125rem;
+  left: 9.9375rem;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.yuan .triangle {
+  width: 0;
+  height: 0;
+  line-height: 0;
+  font-size: 0;
+  border: 0.625rem solid transparent;
+  border-left-color: #ffffff;
+  margin-left: 0.625rem;
+}
+.startSing {
+  width: 0;
+  height: 0;
+  line-height: 0;
+  font-size: 0;
+  border: 0.625rem solid transparent;
+  border-left-color: white;
+  border-right-color: white;
+}
+.songWordArea {
+  height: 7.1875rem;
+  text-align: center;
+  overflow: scroll;
+}
+.songWord {
+  color: white;
+  white-space: pre-line;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 1rem;
+}
+.shareTofriends {
+  width: 11.16071429rem;
+  height: 2.4565508rem;
+  border-radius: 1.4375rem;
+  border: 0.0625rem solid #999999;
+  margin-left: 6.25rem;
+  margin-top: 1.875rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 0.9375rem;
+}
+.listen-buttonToListen {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.listen-buttonToListen .listen {
+  color: #ffffff;
+  font-size: 0.9375rem;
+  margin-bottom: 1.11607143rem;
+  margin-top: 1.11607143rem;
+  margin-left: 0.83705357rem;
+}
+.listen-buttonToListen .buttonToListen {
+  width: 5.02232143rem;
+  height: 1.67410714rem;
+  border: 0.0625rem solid #999999;
+  color: white;
+  font-size: 0.625rem;
+  margin-right: 0.83705357rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.9375rem;
+}
+.similar {
+  display: flex;
+  flex-direction: column;
+}
+.similar .simiNormalBox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 1.11607143rem;
+}
+.similar .simiNormalBox .simiImage {
+  width: 2.51116071rem;
+  height: 2.51116071rem;
+  margin-left: 0.83705357rem;
+  margin-right: 0.83705357rem;
+}
+.similar .simiNormalBox .simiNameAndAuthorBackground {
+  display: flex;
+  flex-direction: column;
+  width: 11.16071429rem;
+}
+.similar .simiNormalBox .simiNameAndAuthorBackground .simiName {
+  color: #ffffff;
+  font-size: 0.75rem;
+  margin-bottom: 0.55803571rem;
+}
+.similar .simiNormalBox .simiNameAndAuthorBackground .simiAuthorBackground {
+  color: #999999;
+  font-size: 0.5rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.similar .simiNormalBox .yuanRight {
+  width: 1.39508929rem;
+  height: 1.39508929rem;
+  border-radius: 0.69754464rem;
+  background-color: transparent;
+  border: 0.0625rem solid #999999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 0.625rem;
+}
+.similar .simiNormalBox .yuanRight .triangleRight {
+  width: 0;
+  height: 0;
+  line-height: 0;
+  font-size: 0;
+  border: 0.4375rem solid transparent;
+  border-left-color: #999999;
+  margin-left: 0.625rem;
+}
+.perfectComment {
+  color: #ffffff;
+  margin-top: 1.11607143rem;
+  margin-left: 0.61383929rem;
+  font-size: 0.9375rem;
+}
+.commentArea {
+  display: flex;
+  flex-direction: column;
+}
+.commentArea .oneComment {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+}
+.commentArea .oneComment .picture {
+  width: 1.953125rem;
+  height: 1.953125rem;
+  border-radius: 1.953125rem/2;
+  margin-left: 0.61383929rem;
+  margin-right: 0.61383929rem;
+  margin-top: 1.28348214rem;
+}
+.commentArea .oneComment .peopleTimeContent {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+.commentArea .oneComment .peopleTimeContent .commentPeople {
+  font-size: 0.625rem;
+  color: #989c9e;
+  margin-top: 1.28348214rem;
+}
+.commentArea .oneComment .peopleTimeContent .time {
+  font-size: 0.5rem;
+  color: #686f75;
+  margin-bottom: 0.55803571rem;
+}
+.commentArea .oneComment .peopleTimeContent .commentContent {
+  font-size: 0.75rem;
+  color: #ffffff;
+  margin-bottom: 1.11607143rem;
+}
+.commentArea .oneComment .callCount {
+  font-size: 0.625rem;
+  color: #686f75;
+  position: absolute;
+  right: 2.5rem;
+  margin-top: 1.28348214rem;
+}
+.commentArea .oneComment .call {
+  width: 1.11607143rem;
+  height: 0.83705357rem;
+  position: absolute;
+  margin-top: 1.28348214rem;
+  right: 1rem;
+}
+.commentArea .divide {
+  height: 0.0625rem;
+  width: 19.375rem;
+  background-color: #989c9e;
+  margin-left: 3.125rem;
+}
+.gone {
+  display: none;
+}

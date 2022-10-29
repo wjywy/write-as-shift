@@ -1,0 +1,147 @@
+body {
+    padding: 0;
+    margin: 0;
+    background-color: rgb(72, 42, 16);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+/* 棋盘 */
+.checkerboard {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    width: 650px;
+    height: 650px;
+    display: grid;
+    grid-template-columns: 1fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr,1fr,1fr,1fr,1fr,1fr,1fr;
+    grid-template-rows: 1fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr,1fr,1fr,1fr,1fr,1fr,1fr;
+    row-gap: 1px;
+    column-gap: 1px;
+    background-color: black;
+    border: 10px solid rgb(154, 95, 42);
+}
+
+/* 父元素 */
+.checkerboard div {
+    background-color: rgb(168, 126, 68);
+    position: relative;
+}
+/* 所有按钮 */
+button {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    font-weight: 800;
+    top:-25px;
+    left: -25px;
+}
+/* 黑色按钮*/
+.buttonBlack {
+    background-color: black;
+}
+/* 白色按钮 */
+.buttonWhite  {
+    background-color:white;
+}
+/* 红色按钮除了最后一排和最右边的兵 */
+/* .buttonRed {
+    top:-25px;
+    left: -25px;
+    background-color: rgb(238,214, 152);
+    color: rgb(179, 0, 0);
+}
+/* 最右边的兵 */
+/* .buttonRed1 {
+    top:-25px;
+    right: -25px;
+    background-color: rgb(238,214, 152);
+    color: rgb(179,0,0);
+}
+/* 最后一排除了最右边的车 */
+/* .buttonRed2 {
+    bottom:-25px;
+    left: -25px;
+    background-color: rgb(238,214, 152);
+    color: rgb(179,0,0);
+} */
+/* 最右边的车 */
+/* .buttonRed3 {
+    bottom:-25px;
+    right: -25px;
+    background-color: rgb(238,214, 152);
+    color: rgb(179,0,0);
+}  */ 
+
+/* */
+.divide {
+    grid-area: 5/1/6/15;
+}
+
+/* 信息图标 */
+img {
+    width: 30px;
+    height: 30px;
+    margin-left: 380px;
+    margin-top: 20px;
+}
+
+/* 图标排版 */
+.picture {
+    height: 650px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* 默认消息 */
+p {
+    color: white;
+}
+
+/* 全部消息 */
+.word {
+    margin-top: 400px;
+    margin-left: 100px;
+}
+
+.gone {
+    display: none;
+}
+
+/* 发表评论框架 */
+
+/* 评论区样式 */
+.comments-section {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+}
+
+.comments-section p {
+    margin-right: 300px;
+}
+
+/* 评论区文字颜色 */
+.commentSectionMessageColor {
+    color: white;
+}
+
+
+
+/* 鼠标经过图形放大 */
+button:hover {
+    transition: all 0.2s;
+    transform: scale(1,1.2);
+}
+
+.buttonHover {
+    transition: all 0.2s;
+    transform: scale(1,1.2);
+}

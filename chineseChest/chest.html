@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en"></html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>五子棋</title>
+</head>
+<link rel="stylesheet" href="./chess.css">
+
+<body>
+    <div class="picture">
+        <input type="button" value="一键换肤" style="width:80px;border-radius: 6px;" id="changeStyle">
+        <div class="word" id="word">
+            <p>你是MM还是GG</p>
+            <p>给阿姨倒一杯卡布奇诺</p>
+            <p>快点啊 我等得花都谢了</p>
+            <p>得得得得得得得得得得得</p>
+            <div class="comment">
+                <input type="text" placeholder="友善评论" id="commentMessage">
+                <input type="button" value="发表" onclick="sendMessage()">
+            </div>
+        </div>
+        <img src="../assets/message.png" alt="信息" class="image" onclick="show()">
+    </div>
+    <div class="checkerboard" id="checkerboard">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div class="comments-section">
+        <p>评论：</p>
+        <div id="receiveMessage"></div>
+    </div>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script type="text/javascript" src="chest.js"></script>
+</body>
+
+
+
+
+
+
+<!-- <div>
+            <button class="buttonBlack" onclick="car" draggable="true" id="car">车</button>
+        </div>
+        <div>
+            <button class="buttonBlack" onclick="house" draggable="true" id="house">马</button>
+        </div>
+        <div>
+            <button class="buttonBlack" onclick="elephent" draggable="true">象</button>
+        </div>
+        <div>
+            <button class="buttonBlack" onclick="solder" draggable="true">士</button>
+        </div>
+        <div>
+            <button class="buttonBlack" onclick="officer" draggable="true">将</button>
+        </div>
+        <div>
+            <button class="buttonBlack" onclick="solder" draggable="true">士</button>
+        </div>
+        <div>
+            <button class="buttonBlack" onclick="elephent" draggable="true">象</button>
+        </div>
+        <div>
+            <button class="buttonBlack1" onclick="car" draggable="true" id="car">车</button>
+            <button class="buttonBlack" onclick="house" draggable="true">马</button>
+        </div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div>
+            <button class="buttonBlack" onclick="cannon" draggable="true">炮</button>
+        </div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div class="divide">楚河汉界</div>
+        <div>
+            <button class="buttonBlack" onclick="cannon" draggable="true">炮</button>
+        </div>
+        <div>
+            <button class="buttonBlack" onclick="zu" draggable="true">卒</button>
+        </div>
+        <div></div>
+        <div>
+            <button class="buttonBlack" onclick="zu" draggable="true">卒</button>
+        </div>
+        <div></div>
+        <div>
+            <button class="buttonBlack" onclick="zu" draggable="true">卒</button>
+        </div>
+        <div></div>
+        <div>
+            <button class="buttonBlack" onclick="zu" draggable="true">卒</button>
+        </div>
+        <div>
+            <button class="buttonBlack1" onclick="zu" draggable="true">卒</button>
+        </div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div>
+            <button class="buttonRed" onclick="zu" draggable="true">兵</button>
+        </div>
+        <div></div>
+        <div>
+            <button class="buttonRed" onclick="zu" draggable="true">兵</button>
+        </div>
+        <div></div>
+        <div>
+            <button class="buttonRed" onclick="zu" draggable="true">兵</button>
+        </div>
+        <div></div>
+        <div>
+            <button class="buttonRed" onclick="zu" draggable="true">兵</button>
+        </div>
+        <div>
+            <button class="buttonRed1" onclick="zu" draggable="true">兵</button>
+        </div>
+        <div></div>
+        <div>
+            <button class="buttonRed" onclick="zu" draggable="true">炮</button>
+        </div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div>
+            <button class="buttonRed" onclick="cannon" draggable="true">炮</button>
+        </div>
+        <div>
+            <button class="buttonRed2" onclick="car" draggable="true">车</button>
+        </div>
+        <div>
+            <button class="buttonRed2" onclick="house" draggable="true">马</button>
+        </div>
+        <div>
+            <button class="buttonRed2" onclick="elephent" draggable="true">相</button>
+        </div>
+        <div>
+            <button class="buttonRed2" onclick="solder" draggable="true">仕</button>
+        </div>
+        <div>
+            <button class="buttonRed2" onclick="officer" draggable="true">帅</button>
+        </div>
+        <div>
+            <button class="buttonRed2" onclick="solder" draggable="true">仕</button>
+        </div>
+        <div>
+            <button class="buttonRed2" onclick="elephent" draggable="true">相</button>
+        </div>
+        <div>
+            <button class="buttonRed2" onclick="house" draggable="true">马</button>
+            <button class="buttonRed3" onclick="car" draggable="true" id="buttonRed3">车</button>
+        </div> -->

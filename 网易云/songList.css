@@ -1,0 +1,235 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+.blurBackground {
+  backdrop-filter: blur(1.25rem);
+}
+.titleBox {
+  height: 4.375rem;
+}
+.helpSongList {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 23.4375rem;
+  height: 4.375rem;
+  position: fixed;
+}
+.imgAndFind {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.5);
+  width: 5.35714286rem;
+  height: 1.953125rem;
+  border-radius: 1.25rem;
+  margin-left: 1.00446429rem;
+  border: 0.0625rem solid #999999;
+}
+.imgAndFind img {
+  width: 0.9375rem;
+  height: 0.9375rem;
+}
+.imgAndFind .image1 {
+  margin-left: 0.9375rem;
+}
+.imgAndFind .image2 {
+  margin-right: 0.9375rem;
+}
+.imgAndFind .divide {
+  height: 0.9375rem;
+  width: 0.0625rem;
+  background-color: #999999;
+}
+.songList {
+  font-size: 0.9375rem;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 4.375rem;
+}
+.yuanAndStart {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 3.90625rem;
+  width: 23.4375rem;
+}
+.yuanAndStart .yuan {
+  width: 1.39508929rem;
+  height: 1.39508929rem;
+  border-radius: 0.69754464rem;
+  background-color: transparent;
+  border: 0.0625rem solid #333333;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 1.00446429rem;
+  margin-right: 1.39508929rem;
+}
+.yuanAndStart .yuan .triangle {
+  width: 0;
+  height: 0;
+  line-height: 0;
+  font-size: 0;
+  border: 0.4375rem solid transparent;
+  border-left-color: #333333;
+  margin-left: 0.625rem;
+}
+.yuanAndStart .list {
+  font-size: 0.625rem;
+  color: #b2b2b2;
+}
+.shareColor {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.red {
+  background-color: #c0678f;
+}
+.green {
+  background-color: #63c4bb;
+}
+.orange {
+  background-color: #e97f71;
+}
+.blue {
+  background-color: #6fb6e3;
+}
+.topBox {
+  width: 23.4375rem;
+  height: 15.625rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.topBox .topBoxImgRight {
+  display: flex;
+  flex-direction: row;
+}
+.topBox .topBoxImgRight .topBoxImg {
+  width: 8.03571429rem;
+  height: 7.92410714rem;
+  border-radius: 0.3125rem;
+  margin-left: 1.39508929rem;
+}
+.topBox .topBoxImgRight .topRightBox {
+  height: 7.92410714rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 1.39508929rem;
+  margin-right: 1.39508929rem;
+}
+.topBox .topBoxImgRight .topRightBox .topBoxBang {
+  font-size: 1rem;
+  color: white;
+}
+.topBox .topBoxImgRight .topRightBox .MusicAndName {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.topBox .topBoxImgRight .topRightBox .MusicAndName .WangYiMusic {
+  width: 1.875rem;
+  height: 1.875rem;
+  border-radius: 0.9375rem;
+  margin-right: 0.3125rem;
+}
+.topBox .topBoxImgRight .topRightBox .MusicAndName .topBoxMusic {
+  font-size: 0.75rem;
+  color: #f3e1e9;
+}
+.topBox .topBoxImgRight .topRightBox .topBoxIntroduce {
+  font-size: 0.625rem;
+  color: #fafafa;
+}
+.topBox .share {
+  margin-top: 1.39508929rem;
+  width: 11.25rem;
+  height: 2.25074405rem;
+  border-radius: 1.5625rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.topBox .share .shareIcon {
+  width: 25;
+  height: 1.5625rem;
+  margin-right: 0.1875rem;
+}
+.topBox .share .shareText {
+  color: white;
+}
+.total {
+  display: flex;
+  flex-direction: column;
+}
+.total .normalBox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 0.94121466rem;
+}
+.total .normalBox .numberBox {
+  font-size: 1rem;
+  color: #999999;
+  margin-left: 1.00446429rem;
+  margin-right: 1.39508929rem;
+}
+.total .normalBox .songAndPeople {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  font-size: 0.625rem;
+}
+.total .normalBox .songAndPeople .songName {
+  font-size: 0.9375rem;
+  color: #333333;
+  margin-bottom: 0.25099058rem;
+}
+.total .normalBox .songAndPeople .middleBox {
+  display: flex;
+  flex-direction: row;
+  color: #999999;
+  width: 13.95089286rem;
+}
+.total .normalBox .songAndPeople .middleBox .singPeoples {
+  display: flex;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.total .normalBox .songAndPeople .middleBox .background {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.total .normalBox .yuanRight {
+  width: 1.39508929rem;
+  height: 1.39508929rem;
+  border-radius: 0.69754464rem;
+  background-color: transparent;
+  border: 0.0625rem solid #999999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 0.625rem;
+}
+.total .normalBox .yuanRight .triangleRight {
+  width: 0;
+  height: 0;
+  line-height: 0;
+  font-size: 0;
+  border: 0.4375rem solid transparent;
+  border-left-color: #999999;
+  margin-left: 0.625rem;
+}

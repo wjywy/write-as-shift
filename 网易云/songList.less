@@ -1,0 +1,332 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
+
+
+@topBoxSizeH: (17.5rem / (420/375)); //上方盒子的高
+@topBoxImgSizeW: 23.4375rem * (144/420); //图片的宽
+@topBoxImgSizeH: (8.875rem / (420/375)); //图片的高
+@margin5: 23.4375rem * (25/420); //toprightbox离左边的间距
+@margin6: 23.4375rem * (17/420); //topboximg离左边的间距
+@margin6: (1.5625rem / (420/375)); //share图标离上方距离
+@margin7: 23.4375rem * (180/375); //share图标的宽
+@margin8: (3.4375rem / (420/275)); //share图标的高
+@imgAndFindSizeW:23.4375rem * (96/420);  //图标框的宽
+@imgAndFindSizeH:(2.1875rem / (420/375));//图标框的高
+
+.blurBackground {
+    backdrop-filter: blur(1.25rem);
+}
+
+.titleBox {
+height: 4.375rem;
+}
+
+.helpSongList {
+    height: 4.375rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 23.4375rem;
+    height: 4.375rem;
+    // background-color: rgb(195, 111, 146);
+    position: fixed;
+}
+
+.imgAndFind {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.5);
+    width: @imgAndFindSizeW;
+    height: @imgAndFindSizeH;
+    border-radius: 1.25rem;
+    margin-left: @margin1;
+    border: .0625rem solid rgb(153, 153, 153);
+    img {
+        width: .9375rem;
+        height: .9375rem;
+    }
+    .image1 {
+        margin-left: .9375rem;
+    }
+    
+    .image2 {
+        margin-right: .9375rem;
+    }
+    .divide {
+        height: .9375rem;
+        width: .0625rem;
+        background-color: rgb(153, 153, 153);
+    }
+}
+
+
+.songList {
+    font-size: .9375rem;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 4.375rem;
+    // position: fixed;
+}
+
+// 播放全部
+@yuan1: 23.4375rem * (25/420); //圆
+@yuanAndStartSizeH:(4.375rem / (420/375));//播放框的高
+@yuanAndStartSizeW:23.4375rem;
+
+.yuanAndStart {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: @yuanAndStartSizeH;
+    width: @yuanAndStartSizeW;
+
+    .yuan {
+        width: @yuan1;
+        height: @yuan1;
+        border-radius: 23.4375rem * (25/420) * (1/2);
+        background-color: transparent;
+        border: .0625rem solid rgb(51, 51, 51);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-left: @margin1;
+        margin-right: @margin2;
+
+        .triangle {
+            //三角
+            width: 0;
+            height: 0;
+            line-height: 0;
+            font-size: 0;
+            border: .4375rem solid transparent;
+            border-left-color: rgb(51, 51, 51);
+            margin-left: .625rem;
+        }
+    }
+
+    // .start {
+
+    // }
+
+    .list {
+        font-size: .625rem;
+        color: rgb(178, 178, 178);
+    }
+}
+
+
+// 上方的盒子
+.shareColor {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+.red {
+    background-color: rgb(192, 103, 143);
+}
+
+.green {
+    background-color: rgb(99,196,187);
+}
+
+.orange {
+    background-color: rgb(233,127,113);
+}
+
+.blue {
+    background-color: rgb(111,182,227);
+}
+.topBox {
+    width: 23.4375rem;
+    height: @topBoxSizeH;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .topBoxImgRight {
+        display: flex;
+        flex-direction: row;
+
+        .topBoxImg {
+            width: @topBoxImgSizeW;
+            height: @topBoxImgSizeH;
+            border-radius: .3125rem;
+            margin-left: @margin6;
+        }
+
+        .topRightBox {
+            height: @topBoxImgSizeH ;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            margin-left: @margin5;
+            margin-right: @margin5;
+            .topBoxBang {
+                font-size: 1rem;
+                color: white;
+            }
+
+            .MusicAndName{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                .WangYiMusic {
+                    width: 1.875rem;
+                    height: 1.875rem;
+                    border-radius: .9375rem;
+                    margin-right: .3125rem;
+                }
+    
+                .topBoxMusic {
+                    font-size: .75rem;
+                    color: rgb(243, 225, 233);
+                }
+            }
+
+            .topBoxIntroduce {
+                font-size: .625rem;
+                color: rgb(250, 250, 250);
+            }
+        }
+    }
+
+    .share {
+        // color: white;
+        margin-top: @margin6;
+        width: @margin7 ;
+        height: @margin8;
+        // background-color: rgb(194, 113, 151);
+        border-radius: 1.5625rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        .shareIcon {
+            width: 25;
+            height: 1.5625rem;
+            margin-right: .1875rem;
+        }
+        .shareText {
+            color: white;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+@margin1: 23.4375rem * (18/420); //序号离左边的间距
+@margin2: 23.4375rem * (25/420); //序号离右边的间距
+@margin3: 23.4375rem * (30/(667*(420/375))); //排与排之间的间距
+@margin4: 23.4375rem * (8/(667*(420/375))); //中间上面与下面之间的间距
+@margin9: 23.4375rem * (250/420);  //文本的长度限制
+
+.total {
+    //总盒子
+    display: flex;
+    flex-direction: column;
+
+    .normalBox {
+        //每一排的盒子
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: @margin3;
+
+        .numberBox {
+            //左边的序号
+            font-size: 1rem;
+            color: rgb(153, 153, 153);
+            margin-left: @margin1;
+            margin-right: @margin2;
+        }
+
+        .songAndPeople {
+            //中间上下两个
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            font-size: .625rem;
+            
+
+            .songName {
+                //中间上面
+                font-size: .9375rem;
+                color: rgb(51, 51, 51);
+                margin-bottom: @margin4;
+              
+            }
+
+            .middleBox {
+                //中间下面
+                display: flex;
+                flex-direction: row;
+                color: rgb(153, 153, 153);
+                width: @margin9;
+
+                // .special {
+                //     width: .9375rem;
+                //     // height: .5rem;
+                //     color: red;
+                //     border: .0625rem solid red;
+                //     text-align: center;
+                //     font-weight: 700;
+                //     font-size: .375rem;
+                //     margin-right: .1875rem;
+                // }
+
+                .singPeoples {
+                    //歌唱者
+                    display: flex;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                }
+                .background {
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                }
+            }
+        }
+        .yuanRight {
+            width: @yuan1;
+            height: @yuan1;
+            border-radius: 23.4375rem * (25/420) * (1/2);
+            background-color: transparent;
+            border: .0625rem solid rgb(153, 153, 153);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            right: .625rem;
+
+    
+            .triangleRight {
+                //三角
+                width: 0;
+                height: 0;
+                line-height: 0;
+                font-size: 0;
+                border: .4375rem solid transparent;
+                border-left-color: rgb(153, 153, 153);
+                margin-left: .625rem;
+            }
+        }
+    }
+}

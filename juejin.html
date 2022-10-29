@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>掘金</title>
+</head>
+
+<body>
+    
+    <div class="topBac">
+        <div class="topBox">
+            <div class="picture"><img src="./assets/juejinLogo.png" alt="掘金"></div>
+            <div>首页</div>
+            <div>沸点</div>
+            <div>直播</div>
+            <div>活动</div>
+            <div>商城</div>
+            <div>APP</div>
+            <div>插件</div>
+            <input type="text" placeholder="探索稀土掘金" class="search">
+            <span class="span1">创作者中心</span>
+            <span class="divide1"></span>
+            <span class="span2"></span>
+            <img src="./assets/jin.png" alt="aa" class="picture2">
+            <span class="vip">会员</span>
+        </div>
+        <div class="divide"></div>
+        <div class="middleBox">
+            <div style="margin-left: 255px;">综合</div>
+            <div>关注</div>
+            <div>后端</div>
+            <div>前端</div>
+            <div>Android</div>
+            <div>iOS</div>
+            <div>人工智能</div>
+            <div>开发工具</div>
+            <div>代码人生</div>
+            <div>阅读</div>
+        </div>
+    </div>
+       
+
+    
+</body>
+<style>
+    body {
+        padding: 0;
+        margin: 0;
+        background-color: rgb(244, 245, 245);
+    }
+
+    .topBac {
+        background-color: rgb(255, 255, 255);
+    }
+
+    .fixed {
+        position: fixed;
+        top: 20px;
+        right: 260px;
+    }
+
+    .topBox {
+        height: 60px;
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+        align-items: center;
+    }
+
+    .topBox div {
+        font-weight: 200;
+        margin-left: 25px;
+        font-size: 15px;
+    }
+
+    .picture {
+        margin-left: 90px;
+    }
+
+    .search {
+        width: 348px;
+        border-radius: 5px;
+        height: 34px;
+        margin-left: 180px;
+        border: 1px solid rgb(192, 196, 203);
+        font-size: small;
+        padding-left: 12px;
+        font-weight: 200;
+    }
+
+    .span1 {
+        width: 95px;
+        height: 35px;
+        background-color: rgb(30, 128, 255);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        margin-left: 25px;
+        border-top-left-radius: 3px;
+        border-bottom-left-radius: 3px;
+    }
+
+    .divide1 {
+        height: 35px;
+        width: 1px;
+        background-color: rgb(53, 141, 255);
+    }
+
+    .span2 {
+        width: 20px;
+        height: 35px;
+        background-color: rgb(30, 128, 255);
+        border-bottom-right-radius: 3px;
+        border-top-right-radius: 3px;
+    }
+
+    .divide {
+        height: 1px;
+        background-color: rgb(241, 241, 241);
+    }
+
+    .middleBox {
+        height: 44px;
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+        align-items: center;
+    }
+
+    .middleBox div {
+        font-weight: 100;
+        margin-left: 25px;
+        font-size: 14px;
+    }
+
+    /* .divide2 {
+        height: 9px;
+        background-color: rgb(241, 241, 241);
+    }
+
+    .picture2 {
+        margin-left: 15px;
+    }
+
+    .vip {
+        margin-left: 2px;
+        color: rgb(134, 144, 156);
+    }
+
+    .manyBox {
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+    }
+
+    .kong {
+        width: 255px;
+        background-color: rgb(244, 245, 245);
+    }
+
+    .bigBox {
+        height: 3000px;
+        width: 695px;
+        background-color: rgb(244, 245, 245);
+    }
+
+    .leftBox {
+        width: 240px;
+        background-color: rgb(244, 245, 245);
+    }
+
+    .white {
+        width: 240px;
+        height: 96px;
+        background-color: rgb(255, 255, 255);
+        margin-bottom: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .light {
+        margin-top: 20px;
+        font-weight: 300;
+        margin-bottom: 24px;
+    }
+
+    .whiteTop {
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+    }
+
+    .night {
+        margin-left: 50px;
+        margin-top: 20px;
+        font-size: large;
+    }
+
+    .go {
+        width: 70px;
+        height: 30px;
+        color: rgb(30, 128, 255);
+        border: 1px solid rgb(30, 128, 255);
+        border-radius: 17px;
+        font-size: 14px;
+        margin-top: 15px;
+        margin-left: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .leftBox img {
+        width: 240px;
+        height: 200px;
+        margin-bottom: 15px;
+        
+    }
+
+    .Dimension {
+        width: 240px;
+        height: 75px;
+        background-color: rgb(255, 255, 255);
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+    }
+
+    .dimensionWord1 {
+        font-weight: 350;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+
+    .dimensionWord2 {
+        font-size: x-small;
+        font-weight: 200;
+        margin-bottom: 19px;
+    }
+
+    .twoDimension {
+        height: 45px !important;
+        width: 45px !important;
+        margin: 15px;
+    }
+
+    .kong2 {
+        background-color: rgb(244, 245, 245);
+        width: 20px;
+    }
+
+    .kong3 {
+        width: 260px;
+        background-color: rgb(244, 245, 245);
+    }
+
+    .gang {
+        width: 100%;
+        height: 1px;
+        background-color: rgb(244, 245, 245);
+    }
+
+    .total {
+        height: 132px;
+        width: 700px;
+        background-color: rgb(255, 255, 255);
+    }
+
+    .top {
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+        margin-bottom: 15px;
+    }
+
+    .top div {
+        font-weight: 200;
+        margin-right: 7px;
+        color: rgb(134, 144, 156);
+    }
+
+    .divideMany {
+        width: 1px;
+        height: 15px;
+    }
+
+    .author {
+        color: rgb(78, 89, 105);
+    }
+
+    .middle {
+        font-weight: 600;
+        margin-left: 15px;
+        margin-bottom: 15px;
+        color: rgb(29, 33, 41);
+    }
+
+    .bottom {
+        font-weight: 200;
+        margin-left: 15px;
+        color: rgb(134, 144, 156);
+    } */
+</style>
+
+</html>

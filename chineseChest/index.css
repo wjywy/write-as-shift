@@ -1,0 +1,35 @@
+.divideThree {
+    display: flex;
+    flex-direction: row;
+}
+
+.same {
+    width: 33%;
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-start;
+    align-items: center;
+}
+
+.left {
+    background-color: rgb(255, 255, 255);
+}
+
+.button {
+    margin-top: 300px;
+    background-color: rgb(168, 126, 68);
+    width: 80px;
+    height: 30px;
+    border-radius: 10px;
+}
+
+.middle {
+    background-color: rgb(239, 240, 241);
+    text-align: center;
+}
+
+.right {
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+}

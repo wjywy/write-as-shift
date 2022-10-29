@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>计算器</title>
+</head>
+
+<body>
+        <div class="computed">这只是一个朴实无华的计算器罢了</div>
+        <div class="bigBox">
+            <input type="text" placeholder="输入数字" class="blankt" id="window">
+            <div class="AC"  onclick="AC()">AC</div>
+            <div onclick="delete1()">清除</div>
+            <div>÷</div>
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>*</div>
+            <div>4</div>
+            <div>5</div>
+            <div >6</div>
+            <div >+</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div>-</div>
+            <div>.</div>
+            <div>0</div>
+            <div class="is" onclick="is()">=</div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        let list = document.getElementsByTagName('div');
+        let str = document.getElementById('window');
+        let i = 4;
+        for (i = 4; i < list.length - 1; i++) {
+            list[i].addEventListener('click', function () {
+                var str2 = this.innerHTML;
+                var str3 = str.value;
+                str.value = str3 + str2;   //赋新值用value
+            }, false)
+        }
+
+        function is() {
+            let str6 = document.getElementById('window');
+            let str5 = str6.value;
+            var str4 = Array.from(str5);//将字符串转换为数组的内置方法
+            var long = str4.length;
+            for (let n = 0; n < long; n++) {
+                if (str4[n] == '+' || str4[n] == '-' || str4[n] == '*' || str4[n] == '÷') {
+                    var k = n;//把下标赋给一个值
+                    var strFront = []; //创建一个新的数组
+                    var strBehind = [];
+                    for (var m = 0; m < n; m++) {
+                        strFront[m] = str4[m];//将原数组赋给新数组,里面全是数字
+                    }
+                    strFront.toString();//将该数组变为字符串,但是数字与数字之间会有逗号分隔符
+                    //去掉逗号，
+                    let sum1 = 0;
+                    for (let j = 0; j < strFront.length; j++) {
+                        sum1 += strFront[j];     //字符数组，所有这里的相加相当于字符的拼接
+                    }
+   //测试用哈哈哈，不加number前面会有一个零
+
+                    let h = 0;
+                    for (let p = k + 1; p < long; p++) {
+                        strBehind[h] = str4[p];  //数组当然要从零开始赋值啦
+                        h++;
+                    }
+                    strBehind.toString();
+                    let sum2 = 0;                       //同上
+                    for (let b = 0; b < strBehind.length; b++) {
+                        sum2 += strBehind[b];
+                    }
+   //小小测试一下  测试成功
+                    var sum = 0;
+                    if (str4[k] == '+') {
+                        sum = Number(sum1) + Number(sum2);  //相加
+                        let str7 = document.getElementById('window');  //获取节点
+                        str7.value = sum;
+                    }
+                    if (str4[k] == '-') {
+                        sum = Number(sum1) - Number(sum2);  //相减
+                        let str7 = document.getElementById('window');
+                        str7.value = sum;
+                    }
+                    if (str4[k] == '*') {
+                        sum = Number(sum1) * Number(sum2);  //相乘
+                        let str7 = document.getElementById('window');
+                        str7.value = sum;
+                    }
+                    if (str4[k] == '÷') {
+                        sum = Number(sum1) / Number(sum2);  //相除
+                        let str7 = document.getElementById('window');
+                        str7.value = sum;
+                    }
+                    break;
+                }
+                else {
+                    continue;
+                }
+            }
+        }
+        //归零
+        function AC() {
+            str.value = '';
+        }
+
+        //回退
+        function delete1() {
+            let str9 = document.getElementById('window');  //获取节点
+            let str10 = str9.value;
+            str10 = str10.substring(0, str10.length - 1);//删去最后一位字符，第一个参数是起始位置,第二个是减去多少
+            str9.value = str10;//赋值
+        }
+    </script>
+</body>
+<style>
+    .computed {
+        margin-left:  580px;
+        font-size: x-large;
+        font-weight: 600;
+        color: pink;
+    }
+
+    .bigBox {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        margin: auto;
+        width: 400px;
+        height: 600px;
+        display: grid;
+        grid-template-columns: 1fr, 1fr, 1fr, 1fr;
+        grid-template-rows: 1fr, 1fr, 1fr, 1fr, 1fr, 1fr;
+        row-gap: 3px;
+        column-gap: 3px;
+        background-color: whitesmoke;
+    }
+
+    div div {
+        background-color: blue;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: xx-large;
+    }
+
+    .blankt {
+        grid-area: 1/1/2/5;
+        background-color: purple;
+        font-size: xx-large;
+        color: black;
+    }
+
+    .AC {
+        grid-area: 2/1/3/3;
+    }
+
+    .is {
+        grid-area: 6/3/7/5;
+    }
+</style>
+
+</html>
